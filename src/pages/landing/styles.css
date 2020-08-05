@@ -78,6 +78,10 @@
     background: var(--color-secundary-dark);
 }
 
+.buttons-container a img {
+    margin-right: 2.4rem;
+}
+
 .total-connections {
     font-size: 1.4rem;
 
@@ -90,11 +94,65 @@
     margin-left: 0.8rem;
 }
 
-@media(min-whidth: 1100px) {
+@media(min-width: 1100px) {
     #page-landing-contant {
         max-width: 1100px;
 
         display: grid;
+
+        /* Falar que são duas linha */
+        grid-template-rows: 350px 1fr; /* 350px = Primeira linha com altura fixa de 
+        350px, 1fr =  a outra linha, vai ocupar oque sobrar da primeira. */
+
+        /* Falar que são três colunas */
+        grid-template-columns: 2fr 1fr 1fr;
+        /* 2fr = a primeira coluna vai ocupar um tamanho 2x maior que o 
+        restante das outras colunas, 1fr 1f = a segunda e a terceira couna
+        vão ocupar o mesmo tamanho.        
+        */
         
+        /* Forma de falar oque vai ficar em cada uma destas colunas e linhas */
+        grid-template-areas: 
+            "logo hero hero" /* logo ocupando a primeira coluna, hero(imagem) ocupando as outras duas. */
+            "buttons buttons total" /* botões ocupando as duas primeiras colunas, na segunda linha, e total ocupando a ultima coluna da segunda linha */
+        ;
+    }
+
+    .logo-container { 
+        /* Aqui fala que a area do ( .logo-container ocupará a area " logo " ) */
+        grid-area: logo;
+        align-self: center;
+        text-align: left;
+        margin: 0;
+    }
+
+    .logo-container img {
+        height: 100%;
+    }
+
+    .logo-container h2 {
+        text-align: initial;
+        font-size: 3.6rem;
+    }
+
+    .hero-image {
+        /* Aqui fala que a area do ( .hero-image ocupará a area " hero " ) */
+        grid-area: hero;
+        justify-self: end;
+    }
+
+    .buttons-container {
+        /* Aqui fala que a area do ( .buttons-container ocupará a area " buttons " ) */
+        grid-area: buttons;
+        justify-content: flex-start;
+    }
+
+    .buttons-container a {
+        font-size: 2.4rem;
+    }
+
+    .total-connections {
+        grid-area: total;
+        justify-self: end;
     }
 }
