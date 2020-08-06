@@ -12,6 +12,7 @@
     "@types/react-dom": "^16.9.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "typescript": "~3.7.2"
   },
@@ -39,5 +40,8 @@
   "description": "Um app criado pela Rocketseat.",
   "main": "index.js",
   "author": "matheus36ef <matheusfranzonief@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react-router-dom": "^5.1.5"
+  }
 }
